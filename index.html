@@ -12,183 +12,94 @@ body {
   min-height: 100vh;
   color: #1a1a1a;
 }
-.container {
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 20px 16px 40px;
-}
-.header {
-  text-align: center;
-  padding: 24px 0 20px;
-}
-.header h1 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #1a1a1a;
-}
-.header p {
-  font-size: 13px;
-  color: #888;
-  margin-top: 6px;
-}
+.container { max-width: 420px; margin: 0 auto; padding: 20px 16px 40px; }
+.header { text-align: center; padding: 24px 0 20px; }
+.header h1 { font-size: 22px; font-weight: 700; }
+.header p { font-size: 13px; color: #888; margin-top: 6px; }
 .brand-tag {
-  display: inline-block;
-  background: #07c160;
-  color: #fff;
-  font-size: 12px;
-  padding: 3px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
+  display: inline-block; background: #07c160; color: #fff;
+  font-size: 12px; padding: 3px 12px; border-radius: 20px; margin-bottom: 10px;
 }
-.pricing {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin: 20px 0;
-}
+.pricing { display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
 .plan-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  border: 2px solid #e8e8e8;
-  cursor: pointer;
-  transition: all 0.2s;
-  position: relative;
+  background: #fff; border-radius: 16px; padding: 20px;
+  border: 2px solid #e8e8e8; cursor: pointer; transition: all 0.2s; position: relative;
 }
-.plan-card.active {
-  border-color: #07c160;
-  box-shadow: 0 4px 20px rgba(7,193,96,0.15);
-}
-.plan-card.recommended {
-  border-color: #ff9500;
-}
-.plan-card.recommended.active {
-  border-color: #ff9500;
-  box-shadow: 0 4px 20px rgba(255,149,0,0.15);
-}
+.plan-card.active { border-color: #07c160; box-shadow: 0 4px 20px rgba(7,193,96,0.15); }
+.plan-card.recommended { border-color: #ff9500; }
+.plan-card.recommended.active { border-color: #ff9500; box-shadow: 0 4px 20px rgba(255,149,0.15); }
 .badge {
-  position: absolute;
-  top: -10px;
-  right: 16px;
-  background: #ff9500;
-  color: #fff;
-  font-size: 11px;
-  padding: 3px 10px;
-  border-radius: 10px;
-  font-weight: 600;
+  position: absolute; top: -10px; right: 16px; background: #ff9500; color: #fff;
+  font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 600;
 }
-.plan-name {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
+.plan-name { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.plan-price { font-size: 32px; font-weight: 800; }
+.plan-price span { font-size: 14px; font-weight: 400; color: #999; }
+.plan-desc { font-size: 13px; color: #666; margin-top: 8px; line-height: 1.6; }
+.plan-includes { margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0; }
+.plan-includes div { font-size: 12px; color: #888; line-height: 1.8; }
+.plan-includes div::before { content: "✓ "; color: #07c160; font-weight: 700; }
+.types { background: #fff; border-radius: 16px; padding: 18px; margin-bottom: 20px; }
+.types h3 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.types p { font-size: 12px; color: #888; line-height: 1.8; }
+
+.pay-section { display: none; text-align: center; }
+.pay-section.show { display: block; }
+.pay-amount { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 14px; }
+.pay-amount .label { font-size: 13px; color: #888; }
+.pay-amount .amount { font-size: 36px; font-weight: 800; color: #07c160; margin: 8px 0; }
+.pay-amount .tip { font-size: 12px; color: #999; }
+.qr-box { background: #fff; border-radius: 16px; padding: 20px; }
+.qr-box img { width: 100%; max-width: 280px; border-radius: 8px; }
+.qr-box .qr-tip { font-size: 13px; color: #666; margin-top: 14px; line-height: 1.8; }
+.qr-box .qr-tip strong { color: #07c160; }
+.back-btn { display: inline-block; margin-top: 16px; font-size: 13px; color: #07c160; cursor: pointer; }
+
+.form-box { background: #fff; border-radius: 16px; padding: 20px; margin-top: 14px; text-align: left; }
+.form-box h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 13px; color: #555; margin-bottom: 6px; font-weight: 600; }
+.form-group label .req { color: #e74c3c; }
+.form-group input, .form-group textarea {
+  width: 100%; border: 1px solid #e0e0e0; border-radius: 10px;
+  padding: 10px 12px; font-size: 14px; font-family: inherit; outline: none;
+  transition: border-color 0.2s;
 }
-.plan-price {
-  font-size: 32px;
-  font-weight: 800;
-  color: #1a1a1a;
+.form-group input:focus, .form-group textarea:focus { border-color: #07c160; }
+.form-group textarea { resize: vertical; min-height: 70px; }
+.submit-btn {
+  width: 100%; background: #07c160; color: #fff; border: none; border-radius: 12px;
+  padding: 14px; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 6px;
 }
-.plan-price span {
-  font-size: 14px;
-  font-weight: 400;
-  color: #999;
+.submit-btn:active { opacity: 0.85; }
+
+.ticket-section { display: none; text-align: center; }
+.ticket-section.show { display: block; }
+.ticket-card {
+  background: #fff; border-radius: 16px; overflow: hidden; margin-bottom: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
-.plan-desc {
-  font-size: 13px;
-  color: #666;
-  margin-top: 8px;
-  line-height: 1.6;
+.ticket-header {
+  background: linear-gradient(135deg, #07c160, #06ad56); color: #fff; padding: 20px;
 }
-.plan-includes {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #f0f0f0;
+.ticket-header .t-label { font-size: 12px; opacity: 0.9; }
+.ticket-header .t-order { font-size: 20px; font-weight: 800; margin-top: 6px; letter-spacing: 1px; }
+.ticket-body { padding: 20px; text-align: left; }
+.ticket-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #f0f0f0; font-size: 13px; }
+.ticket-row:last-child { border-bottom: none; }
+.ticket-row .k { color: #888; }
+.ticket-row .v { color: #1a1a1a; font-weight: 600; text-align: right; max-width: 60%; word-break: break-all; }
+.ticket-actions { display: flex; gap: 10px; margin-top: 14px; }
+.ticket-actions button {
+  flex: 1; padding: 12px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; border: none;
 }
-.plan-includes div {
-  font-size: 12px;
-  color: #888;
-  line-height: 1.8;
+.btn-primary { background: #07c160; color: #fff; }
+.btn-outline { background: #fff; color: #07c160; border: 1.5px solid #07c160 !important; }
+.ticket-note {
+  background: #fff8e6; border-radius: 12px; padding: 14px; font-size: 12px;
+  color: #8a6d3b; line-height: 1.7; text-align: left; margin-top: 14px;
 }
-.plan-includes div::before {
-  content: "✓ ";
-  color: #07c160;
-  font-weight: 700;
-}
-.types {
-  background: #fff;
-  border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 20px;
-}
-.types h3 {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.types p {
-  font-size: 12px;
-  color: #888;
-  line-height: 1.8;
-}
-.pay-section {
-  display: none;
-  text-align: center;
-}
-.pay-section.show {
-  display: block;
-}
-.pay-amount {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 14px;
-}
-.pay-amount .label {
-  font-size: 13px;
-  color: #888;
-}
-.pay-amount .amount {
-  font-size: 36px;
-  font-weight: 800;
-  color: #07c160;
-  margin: 8px 0;
-}
-.pay-amount .tip {
-  font-size: 12px;
-  color: #999;
-}
-.qr-box {
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-}
-.qr-box img {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 8px;
-}
-.qr-box .qr-tip {
-  font-size: 13px;
-  color: #666;
-  margin-top: 14px;
-  line-height: 1.6;
-}
-.qr-box .qr-tip strong {
-  color: #07c160;
-}
-.back-btn {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 13px;
-  color: #07c160;
-  cursor: pointer;
-}
-.footer {
-  text-align: center;
-  font-size: 11px;
-  color: #bbb;
-  margin-top: 24px;
-  line-height: 1.6;
-}
+.footer { text-align: center; font-size: 11px; color: #bbb; margin-top: 24px; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -202,7 +113,7 @@ body {
   <!-- 选套餐视图 -->
   <div id="selectView">
     <div class="pricing">
-      <div class="plan-card" onclick="selectPlan(58, this)">
+      <div class="plan-card" onclick="selectPlan(58, '58套餐', '成品音频20-25秒', this)">
         <div class="plan-name">58 套餐</div>
         <div class="plan-price">¥58 <span>/ 成品</span></div>
         <div class="plan-desc">成品音频时长 20-25 秒</div>
@@ -213,8 +124,7 @@ body {
           <div>配上字幕</div>
         </div>
       </div>
-
-      <div class="plan-card recommended" onclick="selectPlan(88, this)">
+      <div class="plan-card recommended" onclick="selectPlan(88, '88套餐', '成品音频40秒以上', this)">
         <div class="badge">推荐 · 更长</div>
         <div class="plan-name">88 套餐</div>
         <div class="plan-price">¥88 <span>/ 成品</span></div>
@@ -227,7 +137,6 @@ body {
         </div>
       </div>
     </div>
-
     <div class="types">
       <h3>可做题材</h3>
       <p>明星应援 · 主播战歌 · 二次元角色 · CP双人款 · 生贺纪念 · 个人专属战歌 · 私人铃声 · 纪念日祝福 · 团体应援等，各类题材都能接</p>
@@ -246,32 +155,124 @@ body {
       <div class="qr-tip">
         <strong>①</strong> 保存此二维码<br>
         <strong>②</strong> 打开微信「扫一扫」→ 右上角相册<br>
-        <strong>③</strong> 选择图片识别后，转账 <strong id="payAmount2">58</strong> 元<br>
-        <strong>④</strong> 转账成功后微信联系天赐，提交题材和要求
+        <strong>③</strong> 选择图片识别后，转账 <strong id="payAmount2">58</strong> 元
+      </div>
+      <div class="form-box" style="text-align:left; margin-top:16px;">
+        <h3>付款完成后，填写订单信息</h3>
+        <div class="form-group">
+          <label>您的称呼/昵称 <span class="req">*</span></label>
+          <input type="text" id="custName" placeholder="例：小明、XX后援会">
+        </div>
+        <div class="form-group">
+          <label>题材/需求描述 <span class="req">*</span></label>
+          <textarea id="custReq" placeholder="例：给XX明星做应援战歌，风格燃一点，提到XX名字"></textarea>
+        </div>
+        <button class="submit-btn" onclick="generateTicket()">我已付款，生成订单凭证</button>
       </div>
       <div class="back-btn" onclick="backToSelect()">← 返回重新选择</div>
     </div>
   </div>
 
+  <!-- 凭证视图 -->
+  <div id="ticketView" class="ticket-section">
+    <div class="ticket-card">
+      <div class="ticket-header">
+        <div class="t-label">天赐配音 · 订单凭证</div>
+        <div class="t-order" id="ticketOrderNo"></div>
+      </div>
+      <div class="ticket-body">
+        <div class="ticket-row"><span class="k">套餐</span><span class="v" id="tPlan"></span></div>
+        <div class="ticket-row"><span class="k">金额</span><span class="v" id="tAmount"></span></div>
+        <div class="ticket-row"><span class="k">时长</span><span class="v" id="tDuration"></span></div>
+        <div class="ticket-row"><span class="k">称呼</span><span class="v" id="tName"></span></div>
+        <div class="ticket-row"><span class="k">需求</span><span class="v" id="tReq"></span></div>
+        <div class="ticket-row"><span class="k">下单时间</span><span class="v" id="tTime"></span></div>
+      </div>
+    </div>
+    <div class="ticket-note">
+      请截图本页面，发给天赐微信。天赐核对收款后即开始制作，一般24小时内出成品，修改免费。
+    </div>
+    <div class="ticket-actions">
+      <button class="btn-outline" onclick="resetAll()">再下一单</button>
+      <button class="btn-primary" onclick="copyOrderNo()">复制订单号</button>
+    </div>
+  </div>
+
   <div class="footer">
-    下单后请微信联系天赐，提供题材名称、风格要求、使用场景等信息<br>
+    下单后请截图凭证微信联系天赐<br>
     一般24小时内出成品，修改免费
   </div>
 </div>
 
 <script>
-function selectPlan(price, el) {
+let selectedPrice = 58;
+let selectedPlanName = '58套餐';
+let selectedDuration = '成品音频20-25秒';
+
+function selectPlan(price, planName, duration, el) {
   document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
+  selectedPrice = price;
+  selectedPlanName = planName;
+  selectedDuration = duration;
   document.getElementById('payAmount').textContent = '¥' + price;
   document.getElementById('payAmount2').textContent = price;
   document.getElementById('selectView').style.display = 'none';
   document.getElementById('payView').classList.add('show');
   window.scrollTo(0, 0);
 }
+
 function backToSelect() {
   document.getElementById('payView').classList.remove('show');
   document.getElementById('selectView').style.display = 'block';
+}
+
+function generateTicket() {
+  const name = document.getElementById('custName').value.trim();
+  const req = document.getElementById('custReq').value.trim();
+  if (!name || !req) {
+    alert('请填写完整信息（称呼、需求）');
+    return;
+  }
+  const now = new Date();
+  const ts = now.getFullYear().toString() +
+    String(now.getMonth()+1).padStart(2,'0') +
+    String(now.getDate()).padStart(2,'0') +
+    String(now.getHours()).padStart(2,'0') +
+    String(now.getMinutes()).padStart(2,'0') +
+    String(now.getSeconds()).padStart(2,'0');
+  const rand = Math.floor(Math.random()*900+100);
+  const orderNo = 'TC' + ts + rand;
+
+  document.getElementById('ticketOrderNo').textContent = orderNo;
+  document.getElementById('tPlan').textContent = selectedPlanName;
+  document.getElementById('tAmount').textContent = '¥' + selectedPrice;
+  document.getElementById('tDuration').textContent = selectedDuration;
+  document.getElementById('tName').textContent = name;
+  document.getElementById('tReq').textContent = req;
+  document.getElementById('tTime').textContent = now.toLocaleString('zh-CN');
+
+  document.getElementById('payView').classList.remove('show');
+  document.getElementById('ticketView').classList.add('show');
+  window.scrollTo(0, 0);
+}
+
+function copyOrderNo() {
+  const no = document.getElementById('ticketOrderNo').textContent;
+  navigator.clipboard.writeText(no).then(() => {
+    alert('订单号已复制：' + no);
+  }).catch(() => {
+    prompt('请手动复制订单号：', no);
+  });
+}
+
+function resetAll() {
+  document.getElementById('ticketView').classList.remove('show');
+  document.getElementById('custName').value = '';
+  document.getElementById('custReq').value = '';
+  document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
+  document.getElementById('selectView').style.display = 'block';
+  window.scrollTo(0, 0);
 }
 </script>
 </body>
